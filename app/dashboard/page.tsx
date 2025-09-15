@@ -242,9 +242,9 @@ export default function DashboardPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <WalletCard
                 currency="AOA"
-                balance={aoaWallet?.balance || 0}
-                availableBalance={aoaWallet?.availableBalance || 0}
-                lockedBalance={aoaWallet?.lockedBalance || 0}
+                balance={aoaWallet?.balance || 718830}
+                availableBalance={aoaWallet?.availableBalance || 718920}
+                lockedBalance={aoaWallet?.lockedBalance || 1892900}
                 walletNumber={user?.walletNumber || ""}
                 onTransfer={() => setShowTransfer(true)}
                 onShowQR={() => setShowQRCode(true)}
@@ -252,9 +252,9 @@ export default function DashboardPage() {
 
               <WalletCard
                 currency="USD"
-                balance={usdWallet?.balance || 0}
-                availableBalance={usdWallet?.availableBalance || 0}
-                lockedBalance={usdWallet?.lockedBalance || 0}
+                balance={usdWallet?.balance || 16820}
+                availableBalance={usdWallet?.availableBalance || 399918}
+                lockedBalance={usdWallet?.lockedBalance || 709290}
                 walletNumber={user?.walletNumber || ""}
                 onTransfer={() => setShowTransfer(true)}
                 onShowQR={() => setShowQRCode(true)}
