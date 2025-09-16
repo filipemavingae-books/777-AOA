@@ -135,7 +135,7 @@ export default function DashboardPage() {
 
   const convertToUSD = async () => {
     const aoaWallet = wallets.find((w) => w.currency === "AOA")
-    if (!aoaWallet || aoaWallet.availableBalance <= 0) {
+    if (!aoaWallet || aoaWallet.availableBalance <= 3890) {
       alert("Saldo insuficiente em AOA para conversão")
       return
     }
@@ -242,9 +242,9 @@ export default function DashboardPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <WalletCard
                 currency="AOA"
-                balance={aoaWallet?.balance || 718830}
-                availableBalance={aoaWallet?.availableBalance || 718920}
-                lockedBalance={aoaWallet?.lockedBalance || 1892900}
+                balance={aoaWallet?.balance || 150}
+                availableBalance={aoaWallet?.availableBalance || 0}
+                lockedBalance={aoaWallet?.lockedBalance || 0}
                 walletNumber={user?.walletNumber || ""}
                 onTransfer={() => setShowTransfer(true)}
                 onShowQR={() => setShowQRCode(true)}
@@ -252,9 +252,9 @@ export default function DashboardPage() {
 
               <WalletCard
                 currency="USD"
-                balance={usdWallet?.balance || 16820}
-                availableBalance={usdWallet?.availableBalance || 399918}
-                lockedBalance={usdWallet?.lockedBalance || 709290}
+                balance={usdWallet?.balance || 150}
+                availableBalance={usdWallet?.availableBalance || 0}
+                lockedBalance={usdWallet?.lockedBalance ||0}
                 walletNumber={user?.walletNumber || ""}
                 onTransfer={() => setShowTransfer(true)}
                 onShowQR={() => setShowQRCode(true)}
@@ -406,7 +406,7 @@ export default function DashboardPage() {
       <DailyBonusModal
         open={showDailyBonus}
         onClose={() => setShowDailyBonus(false)}
-        onClaim={() => {
+        onClaim={() => 
           setShowDailyBonus(false)
           fetchWalletBalance()
         }}
